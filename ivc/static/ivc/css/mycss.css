@@ -1,0 +1,123 @@
+/*  Настройка стилей текста
+
+font-weight - Насыщенность шрифта
+    - число от 100 до 900 (кратное 100)
+    - normal, bold, bolder, lighter
+
+font-style - Начертание шрифта
+    - normal, italic (курсив), oblique (наклонный)
+
+font-stretch - Задание нормального, разреженных (expanded) или сжатых (condensed) начертаний из текущей гарнитуры шрифта
+    - normal, wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+*/
+
+/* Шрифты на глвной странице */
+.text0 {
+    font-family: 'Roboto Thin', Arial;
+    font-size: 30pt;
+    font-weight: bold;
+    color: aliceblue;
+}
+.text1 {
+    font-family: 'Roboto', Arial;
+    font-size: 25pt;
+    font-weight: lighter;
+    color: aliceblue;
+}
+.text2 {
+    font-family: 'Roboto Thin', Arial;
+    font-size: 14pt;
+    color: aliceblue;
+    padding: 15px;
+}
+
+/* Шрифты для модального окна */
+.text4 {
+    font-family: 'Roboto', Arial;;
+    font-size: 16pt;
+}
+.text5 {
+    font-family: 'Roboto', Arial;;
+    font-size: 16px;
+}
+.text6 {
+    font-family: 'Roboto', Arial;;
+    font-size: 14px;
+}
+.text7 {
+    font-family: 'Roboto Thin', Arial;;
+    font-size: 20px;
+}
+
+/* Центрирование в блоке по вертикали */
+.centerh {
+    vertical-align: middle;
+}
+
+/* Анимация для шариков */
+.float-shadow {
+  display: inline-block;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+}
+.float-shadow:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+.float-shadow:hover:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  transform: translateY(5px);
+}
+
+/* Убираем выделение с кнопок после нажатия */
+a:active, a:focus {
+    outline-style: none;
+}
+
+/* Убираем маркеры от <ul>-маркированного списка */
+li {
+    list-style-type: none;
+}
+
+/* Настройки background */
+body {
+    background-color: black;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+/* Убираем границу вокруг ссылок и кнопок после нажатия */
+button, a {
+    outline: none;
+}

@@ -1,0 +1,180 @@
+{% extends 'ivc/base.html' %} {% load staticfiles %} {% block body %}
+
+<!-- Основной контейнер -->
+<div class="container hidden-xs">
+  <div class="row">
+    <!-- Верхний блок с текстом -->
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+        <br /><br /><br /><br />
+        <div class="text0 text-center">
+          <p>Информационно-Вычислительный Центр</p>
+        </div>
+        <br /><br />
+        <div class="text1 text-center">
+          <p>Наши сервисы</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Шарики -->
+    <div class="row">
+      <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+        <a class="button float-shadow" href="http://nbikemsu.ru/">
+          <img src="{% static 'ivc/images/start/nbikemsu.png' %}" alt="" />
+        </a>
+        <p class="text2 text-center">Оффициальный сайт<br />НФИ КемГУ</p>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+        <a class="button float-shadow" href="{% url 'ivc:login' %}">
+          <img src="{% static 'ivc/images/start/service.png' %}" alt="" />
+        </a>
+
+        <p class="text2 text-center">Сервис подачи/учёта заявок на техническое обслуживание</p>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+        <a class="button float-shadow" href="https://mail.nbikemsu.ru/mail/">
+          <img src="{% static 'ivc/images/start/mail.png' %}" alt="" />
+        </a>
+        <p class="text2 text-center">Почтовый сервис</p>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+        <a class="button float-shadow" href="http://10.1.1.11:8888/">
+          <img src="{% static 'ivc/images/start/otdel.png' %}" alt="" />
+        </a>
+        <p class="text2 text-center">Локальная сеть<br />(сервис файло-обмена)</p>
+      </div>
+    </div>
+
+    <!-- Кнопка "О нас" -->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <a class="button float-shadow" href="#" data-toggle="modal" data-target="#myModal">
+          <img src="{% static 'ivc/images/start/inf.png' %}" alt="" />
+        </a>
+        <p class="text2">О нас</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно "О нас" -->
+<div class="modal fade bs-example-modal-lg hidden-xs" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Шапка -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <img src="{% static 'ivc/images/modalinf/ivc.png' %}" class="modal-title centerh" id="myModalLabel" alt="" />
+        <h class="modal-title centerh text0" id="myModalLabel"><font color="black" size="6">Информационно-Вычислительный Центр</font></h>
+      </div>
+
+      <!-- Тело окна -->
+      <div class="modal-body">
+        <p class="text6"><b>Основные направления работы:</b></p>
+        <p class="text6">
+          - техническое, программное и организационное обеспечение процесса обучения студентов на персональных компьютерах, а также их самостоятельной работы в учебных классах; <br />- создание и
+          поддержка автоматизированных систем по функциональным подразделениям (кадры, бухгалтерия, библиотека, деканат, канцелярия); <br />- техническое обслуживание и ремонт персональных компьютеров
+          и оргтехники; <br />- определение единой политики в области оснащения компьютерных классов и функциональных подразделений компьютерными средствами и программными продуктами; <br />-
+          подготовка специалистов и повышение квалификации.
+        </p>
+
+        <div class="panel-group" id="modalpg">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Структура отдела</a>
+              </h4>
+            </div>
+
+            <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-4 col-md-2 col-lg-2 thumb">
+                    <a class="img-thumbnail" rel="group1" href="{% static 'ivc/images/modalinf/image1.jpg' %}" title="****** ***** *******">
+                      <img src="{% static 'ivc/images/modalinf/image1.jpg' %}" class="img-responsive" alt=""
+                    /></a>
+                  </div>
+                  <div class="col-sm-8 col-md-4 col-lg-4">
+                    <p class="text6"><b>Начальник ИВЦ</b></p>
+                    <p class="text6"><b>Заместитель начальника ИВЦ</b></p>
+                    <p class="text6">
+                      ****** ***** ******* <br />************, ** - ******* №***<br />
+                      <b>Тел.: </b>(****) **-**-** (внутр. ***)<br />
+                      <b>E-Mail: </b>*****@*****.ru
+                    </p>
+                  </div>
+                  <div class="clearfix visible-sm"></div>
+                  <div class="col-sm-4 col-md-2 col-lg-2">
+                    <a class="img-thumbnail" rel="group1" href="{% static 'ivc/images/modalinf/image2.jpg' %}" title="****** ***** *******">
+                      <img src="{% static 'ivc/images/modalinf/image2.jpg' %}" class="img-responsive" alt=""
+                    /></a>
+                  </div>
+                  <div class="col-sm-8 col-md-4 col-lg-4">
+                    <p class="text6"><b>Заместитель начальника ИВЦ</b></p>
+                    <p class="text6">
+                      ****** ***** ******* <br />************, ** - ******* №***<br />
+                      <b>Тел.: </b>(****) **-**-** (внутр. ***)<br />
+                      <b>E-Mail: </b>*****@*****.ru
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Контейнер с вкладками структуры -->
+                <br />
+                <p class="text6"><b>Лаборатории:</b></p>
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#tab0" data-toggle="tab"><b>САиССИ</b></a>
+                  </li>
+                  <li>
+                    <a href="#tab1" data-toggle="tab"><b>РВСПО</b></a>
+                  </li>
+                  <li>
+                    <a href="#tab2" data-toggle="tab"><b>ИиСТ</b></a>
+                  </li>
+                  <li>
+                    <a href="#tab3" data-toggle="tab"><b>ИТО</b></a>
+                  </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <br />
+                <div class="tab-content">
+                  <!-- Вкладка "САиССИ" -->
+                  <div class="tab-pane fade in active" id="tab0">
+                    <p class="text5"><b>Лаборатория системного администрирования и сопровождения сайта института</b></p>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p class="text5"><b>Расположение:</b></p>
+                        <p class="text6">
+                          ************, ** - ******* №***<br /><b>Тел.: </b>(****) **-**-** (внутр. ***) <br />************, ** - ******* №***<br /><b>Тел.: </b>(****) **-**-** (внутр. ***)
+                        </p>
+                        <p class="text5"><b>И.о. зав лабораторией:</b></p>
+                        <p class="text6">****** ***** ******* <br /><b>E-mail: </b>*****@*****.ru <br /><b>Тел.: </b>(****) **-**-** (внутр. ***)</p>
+                      </div>
+
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p class="text5"><b>Сотрудники:</b></p>
+                        <p class="text6"><b>Системный администратор:</b> <br />****** ***** ******* <br /><b>E-mail: </b>*****@*****.ru <br /><b>Тел.: </b>(****) **-**-** (внутр. ***)</p>
+
+                        <p class="text6"><b>Web - программист:</b> <br />****** ***** ******* <br /><b>Тел.: </b>(****) **-**-** (внутр. ***))</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Вкладка "РВСПО" -->
+                  <div class="tab-pane fade" id="tab1">...</div>
+                  <div class="tab-pane fade" id="tab2">...</div>
+                  <div class="tab-pane fade" id="tab3">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

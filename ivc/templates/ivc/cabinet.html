@@ -1,0 +1,84 @@
+{% extends 'ivc/base.html' %}
+{% block title %}Личный кабинет{% endblock %}
+
+
+{% block body %}
+
+<div class="container hidden-xs">
+    <div class="row">
+
+        <br>
+        <!-- Левая панель -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="{{ emp.avatar.url }}" class="img-responsive"></center>
+
+                    <h3>{{ sub.title }}
+                        <br>
+                        <small>{{ emp.fio }}</small>
+                    </h3>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a class="btn btn-primary btn-block" href="{% url 'ivc:newapp' %}" role="button"><span class="glyphicon glyphicon-plus"></span> Новая заявка</a>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a class="btn btn-danger btn-block" href="{% url 'ivc:logout' %}" role="button"><span class="glyphicon glyphicon-off"></span> Выход</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Правая панель -->
+            <div class="col-sm-8 col-md-9">
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <h3>Все заявки:</h3>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>№ (ID)</th>
+                                <th>Тип заявки</th>
+                                <th>Корпус</th>
+                                <th>Аудитория</th>
+                                <th>Дата регистрации</th>
+                                <th>Статус</th>
+                                <th>Дата выполнения</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for app in emp.app_set.all %}
+                                <tr>
+                                    <td>{{ app.id }}</td>
+                                    <td>{{ tp.title }}</td>
+                                    <td>{{ hs.no_hs }}</td>
+                                    <td>{{ cr.no_cr }}</td>
+                                    <td>{{ app.date1 }}</td>
+                                    <td>{{ st.title }}</td>
+                                    <td>{{ app.date2 }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

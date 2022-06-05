@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}ИВЦ | НФИ КемГУ{% endblock %}</title>
+
+    {% load staticfiles %}
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" type="text/css" href="{% static 'ivc/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ivc/css/mycss.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ivc/css/bgslideshow.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'ivc/fonts/roboto/roboto.css' %}" />
+    <link rel="icon"  type="image/png" sizes="16x16" href="{% static 'ivc/images/start/ivc.png' %}" />
+
+    <!-- Подключение fancybox -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="{% static 'ivc/fancybox/lib/jquery.mousewheel.pack.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'ivc/fancybox/source/jquery.fancybox.css' %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static 'ivc/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'ivc/fancybox/source/helpers/jquery.fancybox-buttons.css' %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static 'ivc/fancybox/source/helpers/jquery.fancybox-buttons.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ivc/fancybox/source/helpers/jquery.fancybox-media.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'ivc/fancybox/source/helpers/jquery.fancybox-thumbs.css' %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static 'ivc/fancybox/source/helpers/jquery.fancybox-thumbs.js' %}"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<!-- Скрипт для определения типа изображения fancybox -->
+<script type="text/javascript">
+    $("#img0").fancybox({
+        helpers : {
+            title : {
+                type : 'outside'
+            }
+        }
+    });
+
+    $("a[rel=group1]").fancybox({
+        helpers : {
+            title : {
+                type : 'outside'
+            }
+        },
+        'transitionIn' : 'none',
+        'transitionOut' : 'none',
+        'titlePosition' : 'over',
+        'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? '   ' + title : '') + '</span>';
+        }
+    });
+</script>
+
+<!-- Фоновое слай-шоу -->
+<div class="container">
+    <!-- Список слайдов (объявление) -->
+    <ul class="cb-slideshow" id="bgsh">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul>
+</div>
+
+<!-- Сюда загружается контент подстраниц -->
+{% block body %}
+
+
+
+{% endblock %}
+
+
+    <!-- Дичь какая-то -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'ivc/js/bootstrap.js' %}"></script>
+</body>
+</html>

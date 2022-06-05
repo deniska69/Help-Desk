@@ -1,0 +1,66 @@
+{% extends 'ivc/base2.html' %}
+{% block title %}Lab Details{% endblock %}
+{% block labs_active %}active{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid app-container">
+        <div class="row">
+
+            <!-- Left Lab Info -->
+            <div class="col-sm-4 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <a href="{% url 'ivc:detail' lab.id %}">
+                            <img src="{{ lab.lab_logo.url }}" class="img-responsive">
+                        </a>
+
+                        <h1>{{ lab.title }}
+                            <small>{{ lab.zav_lab }}</small>
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Song Info -->
+            <div class="col-sm-8 col-md-9">
+
+                <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                    <li class="active"><a href="{% url 'ivc:detail' lab.id %}">View All</a></li>
+                    <li><a href="#">Add New App</a></li>
+                </ul>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <h3>All Apps</h3>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Text</th>
+                                <th>Lab ID</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for app in lab.app_set.all %}
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
